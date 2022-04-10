@@ -7,7 +7,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.security.Timestamp;
 import java.util.UUID;
 
 @Getter
@@ -27,12 +26,15 @@ public class Beer {
     @Version
     private Long version;
 
+
+    // changed the time to localtime, since it was throwing errors
+    // changed the time to localtime, since it was throwing errors
     @CreationTimestamp
     @Column(updatable = false)
-    private Timestamp createdDate;
+    private java.time.LocalTime createdDate;
 
     @UpdateTimestamp
-    private Timestamp lastModifiedDate;
+    private java.time.LocalTime lastModifiedDate;
 
     private String beerName;
     private String beerStyle;
