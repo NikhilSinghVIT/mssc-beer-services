@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-04-29T12:34:19+0530",
+    date = "2022-04-29T12:51:31+0530",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 17.0.2 (Oracle Corporation)"
 )
 @Component
@@ -38,9 +38,7 @@ public class BeerMapperImpl implements BeerMapper {
         if ( beer.getBeerStyle() != null ) {
             beerDto.beerStyle( Enum.valueOf( BeerStyleEnum.class, beer.getBeerStyle() ) );
         }
-        if ( beer.getUpc() != null ) {
-            beerDto.upc( beer.getUpc() );
-        }
+        beerDto.upc( beer.getUpc() );
         beerDto.price( beer.getPrice() );
 
         return beerDto.build();
